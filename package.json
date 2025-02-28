@@ -1,6 +1,6 @@
 {
   "name": "paylinker-sdk",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -16,6 +16,10 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ghant2906/paylinker-sdk"
+  },
   "devDependencies": {
     "@types/node": "^22.13.1",
     "axios": "^1.7.9",

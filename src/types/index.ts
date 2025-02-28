@@ -9,12 +9,22 @@ export interface Transaction {
   status: string;
   createdAt: string;
   confirmedAt: string;
+  wallet: {
+    walletId: string;
+    address: string;
+  };
+  paymentMethod: {
+    paymentMethodId: string;
+    networkCode: string;
+    chainId: number;
+    vmType: string;
+  };
 }
 
 export interface CreateTransactionParams {
   orderId: string;
   amount: string;
-  paymentMethodId: string;
+  networkCode: string;
 }
 
 export interface TransactionListParams {
@@ -22,7 +32,7 @@ export interface TransactionListParams {
   createdAt?: string;
   updatedAt?: string;
   walletId?: string;
-  paymentMethodId?: string;
+  networkCode?: string;
   orderId?: string;
   transactionId?: string;
   transactionHash?: string;

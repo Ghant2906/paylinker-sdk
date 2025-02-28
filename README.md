@@ -45,7 +45,10 @@ const sdk = new PayLinkSDK(apiKey);
 
 // Example: Create a new transaction
 const transactionData = {
-  // Provide the required parameters for the transaction as defined by the API
+  networkCode: "eth",
+  orderId: "pop990811",
+  amount: 20,
+  urlCallback: "https://www.google.com/", // Optional - Payment page URL will be returned if provided
 };
 
 sdk.transaction
@@ -56,6 +59,57 @@ sdk.transaction
   .catch((error) => {
     console.error("Error creating transaction:", error);
   });
+
+// Example Response without urlCallback:
+/*
+{
+  "transactionId": "de3148d3-22fe-4d97-8f10-d98b008c5e4a",
+  "walletId": "06a9044c-86b3-4bb4-acee-33cc4f1683c3",
+  "merchantId": "75ff4eff-164c-4b13-adde-1118f8277a54",
+  "paymentMethodId": "b2f26627-adbe-4233-99bd-bd547f754af6",
+  "orderId": "ORD121212",
+  "amount": 30.5,
+  "createdAt": "2025-02-21T04:11:27.946361+00:00",
+  "wallet": {
+    "walletId": "06a9044c-86b3-4bb4-acee-33cc4f1683c3",
+    "address": "0x4035bb59573acf9ff6c428667f3b1f4af7d68a80"
+  },
+  "paymentMethod": {
+    "paymentMethodId": "b2f26627-adbe-4233-99bd-bd547f754af6",
+    "networkCode": "eth",
+    "chainId": 1,
+    "vmType": "evm"
+  }
+}
+*/
+
+// Example Response with urlCallback:
+/*
+{
+  "transactionId": "de3148d3-22fe-4d97-8f10-d98b008c5e4a",
+  "walletId": "06a9044c-86b3-4bb4-acee-33cc4f1683c3",
+  "merchantId": "75ff4eff-164c-4b13-adde-1118f8277a54",
+  "paymentMethodId": "b2f26627-adbe-4233-99bd-bd547f754af6",
+  "orderId": "ORD121212",
+  "amount": 30.5,
+  "createdAt": "2025-02-21T04:11:27.946361+00:00",
+  "wallet": {
+    "walletId": "06a9044c-86b3-4bb4-acee-33cc4f1683c3",
+    "address": "0x4035bb59573acf9ff6c428667f3b1f4af7d68a80"
+  },
+  "paymentMethod": {
+    "paymentMethodId": "b2f26627-adbe-4233-99bd-bd547f754af6",
+    "networkCode": "eth",
+    "chainId": 1,
+    "vmType": "evm"
+  },
+  "paymentPageUrl": "https://payment.crbgroup.live/API-c7e33cde-8ea2-4393-a21b-c0c8e330f463/107f7a3c-4f0a-4123-a63b-8d15a2cce391/https%3A%2F%2Fwww.google.com%2F"
+}
+*/
+
+// Note: When redirecting to paymentPageUrl, the payment page will:
+// 1. Monitor the transaction for incoming payments
+// 2. Automatically redirect back to the provided urlCallback once the required amount is received
 
 // Example: Retrieve the transaction list
 sdk.transaction
