@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 
-export class PayLinkClient {
+export class CryptoMMOClient {
   private client: AxiosInstance;
 
   constructor(apiKey: string) {

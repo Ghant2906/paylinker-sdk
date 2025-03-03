@@ -1,5 +1,5 @@
 {
-  "name": "paylinker-sdk",
+  "name": "crypto-mmo-sdk",
   "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

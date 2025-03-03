@@ -1,8 +1,8 @@
-import { PayLinkClient } from './client';
+import { CryptoMMOClient } from './client';
 import { TransactionAPI } from './transaction';
 import { MerchantAPI } from './merchant';
 
-export class PayLinkSDK extends PayLinkClient {
+export class CryptoMMOSDK extends CryptoMMOClient {
   public readonly transaction: TransactionAPI;
   public readonly merchant: MerchantAPI;
 

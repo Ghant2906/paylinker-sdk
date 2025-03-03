@@ -1,6 +1,6 @@
-# PayLinker SDK
+# CryptoMMO SDK
 
-This is a simple SDK that helps you connect and interact with the PayLinker API. The SDK includes modules to handle tasks related to transactions and merchant information. It is built on top of axios, supports both CommonJS and ESM, and is written in TypeScript.
+This is a simple SDK that helps you connect and interact with the CryptoMMO API. The SDK includes modules to handle tasks related to transactions and merchant information. It is built on top of axios, supports both CommonJS and ESM, and is written in TypeScript.
 
 ## Features
 
@@ -24,21 +24,21 @@ This is a simple SDK that helps you connect and interact with the PayLinker API.
 You can install the SDK via npm or yarn:
 
 ```bash
-npm install paylinker-sdk
+npm install crypto-mmo-sdk
 ```
 
 Or using yarn:
 
 ```bash
-yarn add paylinker-sdk
+yarn add crypto-mmo-sdk
 ```
 
 ## Usage
 
-To use the SDK, you need a valid API key from PayLinker. Below is a basic example for initializing and using the API:
+To use the SDK, you need a valid API key from CryptoMMO. Below is a basic example for initializing and using the API:
 
 ```typescript
-import { PayLinkSDK } from "paylinker-sdk";
+import { PayLinkSDK } from "crypto-mmo-sdk";
 
 const apiKey = "YOUR_API_KEY_HERE";
 const sdk = new PayLinkSDK(apiKey);

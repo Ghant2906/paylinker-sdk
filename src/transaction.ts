@@ -1,7 +1,7 @@
-import { PayLinkClient } from './client';
+import { CryptoMMOClient } from './client';
 import { Transaction, CreateTransactionParams, TransactionListParams } from './types';
 
-export class TransactionAPI extends PayLinkClient {
+export class TransactionAPI extends CryptoMMOClient {
   async createTransaction(params: CreateTransactionParams): Promise<Transaction> {
     return this.post<Transaction>('/api/transactions', params);
   }
